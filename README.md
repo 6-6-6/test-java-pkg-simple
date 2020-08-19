@@ -14,6 +14,7 @@ find dev-java/ -type f -name \*.ebuild -exec sudo FEATURES="test" USE="doc sourc
 - [x] guava-testlib
 - [x] guice-servlet
 - [x] javassist
+- [x] java-ebuilder
 - [x] jboss-marshalling
 - [x] jboss-marshalling-river
 - [x] jboss-marshalling-serial
