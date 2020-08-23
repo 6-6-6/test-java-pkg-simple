@@ -38,7 +38,7 @@ src_prepare() {
 	default
 
 	if use makefile; then
-		hprefixify scripts.new/{bin/*,movl} java-ebuilder.conf
+		hprefixify scripts.new/{bin/*,resources/Makefiles/*,movl} java-ebuilder.conf
 	else
 		hprefixify scripts/{{tree,meta}.sh,movl} java-ebuilder.conf
 	fi
