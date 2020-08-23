@@ -19,6 +19,7 @@ HOMEPAGE="https://github.com/gentoo/java-ebuilder"
 
 LICENSE="GPL-2"
 SLOT="0"
+IUSE="+makefile"
 
 DEPEND=">=virtual/jdk-1.8"
 RDEPEND=">=virtual/jre-1.8
@@ -35,7 +36,12 @@ JAVA_MAIN_CLASS="org.gentoo.java.ebuilder.Main"
 
 src_prepare() {
 	default
-	hprefixify scripts/{{tree,meta}.sh,movl} java-ebuilder.conf
+
+	if use makefile; then
+		hprefixify scripts.new/{bin/*,movl} java-ebuilder.conf
+	else
+		hprefixify scripts/{{tree,meta}.sh,movl} java-ebuilder.conf
+	fi
 }
 
 src_install() {
@@ -48,13 +54,17 @@ src_install() {
 
 	dodoc README maven.conf
 
-	exeinto /usr/lib/${PN}
-	doexe scripts/{tree,meta}.sh
-	doexe "${FILESDIR}"/simple_formatter
-	# TODO: merge them into java-ebuilder when stable
-	#cp -r ${FILESDIR}/scripts/* ${ED}/usr/lib/${PN}/ || die "failed to install scripts"
-
-	dobin scripts/movl
+	if use makefile; then
+		exeinto /usr/lib/${PN}/bin
+		doexe scripts.new/bin/*
+		insinto /usr/lib/${PN}
+		doins -r scripts.new/resources/*
+		dobin scripts.new/movl
+	else
+		exeinto /usr/lib/${PN}
+		doexe scripts/{tree,meta}.sh
+		dobin scripts/movl
+	fi
 
 	insinto /etc
 	doins java-ebuilder.conf
