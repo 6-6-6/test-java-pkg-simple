@@ -8,7 +8,4 @@
      <email>heroxbd@gentoo.org</email>
      <name>Benda Xu</name>
   </maintainer>
-  <use>
-     <flag name="makefile"> install makefile coded version of movl</flag>
-  </use>
 </pkgmetadata>
