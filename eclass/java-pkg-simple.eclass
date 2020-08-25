@@ -316,7 +316,7 @@ java-pkg-simple_prepend_resources() {
 # created jar.
 #
 # If USE FLAG 'binary' exists and is set, it will just copy
-# ${JAVA_BINJAR_FILENAME} to ${S} and skip src_compile.
+# ${JAVA_BINJAR_FILENAME} to ${S} and skip the rest of src_compile.
 java-pkg-simple_src_compile() {
 	local sources=sources.lst classes=target/classes apidoc=target/api
 
@@ -411,8 +411,7 @@ java-pkg-simple_src_install() {
 # @FUNCTION: java-pkg-simple_src_test
 # @DESCRIPTION:
 # src_test for simple single java jar file.
-# It will launch pkgdiff test if ${JAVA_BINJAR_FILENAME} is set.
-# Besides, it will perform test with framework defined by
+# It will perform test with frameworks that are defined in
 # ${JAVA_TESTING_FRAMEWORKS}.
 java-pkg-simple_src_test() {
 	local test_sources=test_sources.lst classes=target/test-classes
