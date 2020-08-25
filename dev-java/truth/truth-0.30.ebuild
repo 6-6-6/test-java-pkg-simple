@@ -23,11 +23,11 @@ KEYWORDS="~amd64"
 # POM: ${PN}-release_0_30/core/pom.xml
 # com.google.code.findbugs:jsr305:3.0.1 -> >=dev-java/jsr305-3.0.1:0
 # com.google.errorprone:error_prone_annotations:2.0.8 -> >=dev-java/error-prone-annotations-2.0.14:0
+#	>=dev-java/error-prone-annotations-2.0.14:0
 # com.google.guava:guava:19.0 -> >=dev-java/guava-20.0:20
 # junit:junit:4.10 -> >=dev-java/junit-4.12:4
 
 CDEPEND="
-	>=dev-java/error-prone-annotations-2.0.14:0
 	>=dev-java/guava-20.0:20
 	>=dev-java/jsr305-3.0.1:0
 	>=dev-java/junit-4.12:4
@@ -51,7 +51,7 @@ RDEPEND="
 
 S="${WORKDIR}"
 
-JAVA_GENTOO_CLASSPATH="jsr305,error-prone-annotations,guava-20,junit-4"
+JAVA_GENTOO_CLASSPATH="jsr305,guava-20,junit-4"
 JAVA_CLASSPATH_EXTRA="auto-value,gwt-2.8"
 JAVA_SRC_DIR="${PN}-release_0_30/core/src/main/java"
 JAVA_RESOURCE_DIRS=(
