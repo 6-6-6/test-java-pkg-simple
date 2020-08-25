@@ -40,7 +40,7 @@ CDEPEND="
 # test? com.google.truth:truth:0.28 -> >=dev-java/truth-0.30:0
 
 DEPEND="
-	>=virtual/jdk-1.8:*
+	virtual/jdk:1.8
 	${CDEPEND}
 	test? (
 		>=dev-java/truth-0.30:0
