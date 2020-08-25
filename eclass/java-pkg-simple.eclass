@@ -37,7 +37,8 @@ if has test ${JAVA_PKG_IUSE}; then
 			junit-4)
 				test_deps+=" dev-java/junit:4";;
 			pkgdiff)
-				test_deps+=" amd64? ( dev-util/pkgdiff dev-util/japi-compliance-checker )";;
+				test_deps+=" amd64? ( dev-util/pkgdiff
+					dev-util/japi-compliance-checker )";;
 			testng)
 				test_deps+=" dev-java/testng:0";;
 		esac
@@ -284,7 +285,7 @@ java-pkg-simple_test_with_pkgdiff_() {
 # @INTERNAL
 # @DESCRIPTION:
 # Copy things under "${JAVA_RESOURCE_DIRS[@]}" or "${JAVA_TEST_RESOURCE_DIRS[@]}"
-# to ${classes}, so that
+# to ${classes}, so that `jar` will package resources together with classes.
 #
 # Note that you need to define a "classes" variable before calling
 # this function.
