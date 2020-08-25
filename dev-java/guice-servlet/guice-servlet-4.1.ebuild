@@ -39,7 +39,7 @@ CDEPEND="
 # test? org.ow2.asm:asm:5.0.3 -> >=dev-java/asm-8.0.1:7
 
 DEPEND="
-	>=virtual/jdk-1.8:*
+	virtual/jdk:1.8
 	${CDEPEND}
 	java-virtuals/servlet-api:4.0
 	test? (
