@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repositories version="1.0">
+	<repo priority="50" status="unofficial">
+		<name>test-java-pkg-simple</name>
+		<description>A Gentoo Overlay for testing java-pkg-simple and java-ebuilder</description>
+                <homepage>http://github.com/6-6-6/test-java-pkg-simple</homepage>
+		<owner>
+			<email>zzy2529420793@gmail.com</email>
+			<name>Zhang Zongyu</name>
+		</owner>
+		<source type="git">git://github.com/6-6-6/test-java-pkg-simple.git</source>
+		<source type="git">https://github.com/6-6-6/test-java-pkg-simple.git</source>
+	</repo>
+</repositories>
